@@ -2,27 +2,30 @@ package com.algorithm.leetcode;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class Solution {
 
-
-    public boolean judgeSquareSum(int c) {
-        int i = 1;
-        int j = (int)Math.sqrt(c);
-        while(i <= j) {
-            int sum = i * i + j * j;
-            if(sum < c) {
-                i++;
-            } else if(sum > c) {
-                j--;
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int index = nums1.length - 1;
+        int i = m - 1;
+        int j = n - 1;
+        while(i >= 0 && j >= 0) {
+            if(nums1[i] >= nums2[j]) {
+                nums1[index--] = nums1[i--];
             } else {
-                return true;
+                nums1[index--] = nums2[j--];
             }
         }
-        return false;
+        while(i >= 0) {
+            nums1[index--] = nums1[i--];
+        }
+        while(j >= 0) {
+            nums1[index--] = nums2[j--];
+        }
     }
-
 
 }

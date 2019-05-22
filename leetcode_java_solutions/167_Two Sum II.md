@@ -37,7 +37,7 @@ class Solution {
 ```
 
 ### 个人解读
-参见[001](001_Two%20Sum.md)
+参见[001](../001_Two%20Sum.md)
 
 tags:
   - 数组
