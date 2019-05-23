@@ -6,27 +6,23 @@ import java.util.*;
 
 public class Solution {
 
-    public int eraseOverlapIntervals(int[][] intervals) {
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[1] - o2[1];
+    public boolean isSubsequence(String s, String t) {
+        //判断s是否是t的子字符串
+        int i =0, j =0;
+        while(i < s.length() && j < t.length()) {
+            if(s.charAt(i) == t.charAt(j)) {
+                i++;
             }
-        });
-        int count = 0;
-        int end = Integer.MIN_VALUE;
-        for(int[] interval: intervals) {
-            if(interval[0] >= end) {
-                count++;
-                end = interval[1];
-            }
+            j++;
         }
-        return intervals.length - count;
-
+        return i == s.length();
     }
 
 
+
 }
+
+
 
 class ListNode {
     int val;

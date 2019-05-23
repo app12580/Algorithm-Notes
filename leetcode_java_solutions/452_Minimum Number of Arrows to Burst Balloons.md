@@ -15,6 +15,25 @@ Example:
 对于该样例，我们可以在x = 6（射爆[2,8],[1,6]两个气球）和 x = 11（射爆另外两个气球）。
 ### solution
 ```
+class Solution {
+    public int findMinArrowShots(int[][] points) {
+        Arrays.sort(points, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[1] - o2[1];
+            }
+        });
+        int count = 0;
+        int end = Integer.MIN_VALUE;    //容易出问题的地方，恰好输入是最小值
+        for(int[] interval: points) {
+            if(interval[0] > end || interval[0] == Integer.MIN_VALUE) { //第一次写的时候少了||后面的东西
+                count++;
+                end = interval[1];
+            }
+        }
+        return count;
+    }
+}
 ```
 
 ### 个人解读
@@ -27,7 +46,7 @@ Example:
 
 想当然会觉得没问题，因为把所有的不重合的挑出来以后(设为集合A)，那么剩余集合B里面的区间必然会有与A重合的，那么用飞镖射掉A的同时，就会顺带的把B里面的气球射掉
 然而问题来了，会不会出现这种情况：B1与A1重合，B2与A1重合，但是B1与B2不重合，所以射掉A1的时候，不能同时的把B1和B2射掉
-所以需要去证明：这种情况发生时候，B2或者B1必有另外一个A2，使得可以同时被飞镖射掉
+所以需要去证明：这种情况发生时候，B2或者B1必有另外一个A2，使得可以同时被飞镖射掉，并且同时不会引出新的"问题Bi
 
 以下去证明：
 
@@ -60,6 +79,7 @@ Example:
 2)如果存在射不到的Bi，那么这时候有 An-1.end < Bi.start < Bi.end < An.end
 3.1)如果An.end没有射中别的Bi，那么可以不在An.end上射击，在Bi上找一个合理的地方，如果找不到，则说明Bi应该被收录进An里面
 3.2)如果有射中别的Bi，另此时"别的Bi"记作C，那么C有两种情况，C与An+1接壤，
+//TODO 
 
 tags:
   - 数组
