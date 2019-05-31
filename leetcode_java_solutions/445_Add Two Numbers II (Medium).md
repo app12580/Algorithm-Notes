@@ -14,7 +14,34 @@ Output: 7 -> 8 -> 0 -> 7
   
 ### solution  
 ```  
+  class Solution {
+      public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+          Stack<Integer> stack1 = buildStack(l1);
+          Stack<Integer> stack2 = buildStack(l2);
+          
+          ListNode head = new ListNode(-1);
+          int carry = 0;
+          while(!stack1.isEmpty() || !stack2.isEmpty() || carry ==1) {
+              int i1 = stack1.isEmpty() ? 0 : stack1.pop();
+              int i2 = stack2.isEmpty() ? 0 : stack2.pop();
+              int sum = i1 + i2 + carry;
+              ListNode node = new ListNode(sum % 10);
+              node.next = head.next;
+              head.next = node;
+              carry = sum / 10;
+          }
+          return head.next;
+      }
   
+      public Stack<Integer> buildStack(ListNode node) {
+          Stack<Integer> stack = new Stack<>();
+          while(node != null) {
+              stack.push(node.val);
+              node = node.next;
+          }
+          return stack;
+      }
+  }
 ```  
   
 ### 个人解读  
@@ -24,4 +51,6 @@ Output: 7 -> 8 -> 0 -> 7
   
   
 tags:  
-  -   
+  -   链表  
+  -  双指针  
+  -  预处理  
