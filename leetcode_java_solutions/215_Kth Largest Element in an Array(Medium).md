@@ -39,6 +39,7 @@
           return nums[start];  
       }  
     
+    // 从小到大排序， 返回当前的index，然后根据index去获取是第几大的
       private int getMiddle(int[] nums, int start, int end) {  
           int tmp = nums[start];  
           while(start < end) {  
