@@ -14,5 +14,19 @@
    主要看参数列表
    dfs(当前进度, 结果集, 总进度指标Or原始条件, 【dfs的次数】 )    
 
+  
+### 非线性的终止条件  
+
+指不是那种一步一步的dfs，而是要在运行在某一只棕情况下，终止所有的for循环。
+```
+private boolean dfs(xxx) {
+     for(循环) {
+        if(dfs(curlen, board, marked, word, nextI, nextJ)){    
+           return true;    
+        }   
+     }
+}
+ 
 
 
+```
