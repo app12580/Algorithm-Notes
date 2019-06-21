@@ -56,6 +56,28 @@
           return start;  
       }  
   }  
+  
+  // 其他方法
+  排序 ：时间复杂度 O(NlogN)，空间复杂度 O(1)
+  
+  public int findKthLargest(int[] nums, int k) {
+      Arrays.sort(nums);
+      return nums[nums.length - k];
+  }
+  堆 ：时间复杂度 O(NlogK)，空间复杂度 O(K)。
+  
+  public int findKthLargest(int[] nums, int k) {
+      PriorityQueue<Integer> pq = new PriorityQueue<>(); // 小顶堆
+      for (int val : nums) {
+          pq.add(val);
+          if (pq.size() > k)  // 维护堆的大小为 K
+              pq.poll();
+      }
+      return pq.peek();
+  }
+  
+  
+  
 ```    
     
 ### 个人解读    
