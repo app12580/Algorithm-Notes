@@ -1,0 +1,58 @@
+### description    
+  Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.  
+    
+  You may assume no duplicates in the array.  
+    
+  Example 1:  
+    
+  Input: [1,3,5,6], 5  
+  Output: 2  
+  Example 2:  
+    
+  Input: [1,3,5,6], 2  
+  Output: 1  
+  Example 3:  
+    
+  Input: [1,3,5,6], 7  
+  Output: 4  
+  Example 4:  
+    
+  Input: [1,3,5,6], 0  
+  Output: 0  
+### solution    
+```    
+  class Solution {  
+     public int searchInsert(int[] nums, int target) {  
+          int l = 0;  
+          int h = nums.length;  
+          while(l < h) {  
+              int m = l + (h - l) / 2;  
+              int val = nums[m];  
+              if(val == target) {  
+                  return m;  
+              } else if(val < target) {  
+                  l = m + 1;  
+              } else {  
+                  h = m;  
+              }  
+          }  
+    
+          return l;  
+      }  
+  }  
+```    
+    
+### 个人解读    
+  搜索算法，需要应用二分法。  
+  这种题目，主要是理解二分条件。  
+    
+  ```  
+  Input: [1,3,5,6], 2  
+    Output: 1  
+    刚开始理解出现偏差，以为out是0。  
+  ```  
+    
+  整理下思路，就是求第一个大于等于target的index，然后就可以套模板了  
+    
+tags:    
+  -  二分法  
