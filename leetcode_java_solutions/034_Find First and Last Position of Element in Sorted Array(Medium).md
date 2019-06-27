@@ -18,28 +18,29 @@
 ### solution    
 ```    
   class Solution {  
-      public int[] searchRange(int[] nums, int target) {  
-          int first = binarySearch(nums, target);  
-          int last = binarySearch(nums, target + 1);  
-          if(first == nums.length || nums[first] != target) {  
-              return new int[]{-1,-1};  
-          }  
-          return new int[]{first, Math.max(first, last - 1)};  
-      }  
-        
-      public int binarySearch(int[] nums, int key) {  
-          int l = 0, h = nums.length - 1;  
-          while (l < h) {  
-              int m = l + (h - l) / 2;  
-              if (nums[m] >= key) {  
-                  h = m;      //如果nums[m] == key，  
-              } else {  
-                  l = m + 1;  
-              }  
-          }  
-          return l;  
-      }  
-  }  
+        public int[] searchRange(int[] nums, int target) {  
+            int first = binarySearch(nums, target);  
+            int last = binarySearch(nums, target + 1);  
+            if(first == nums.length || nums[first] != target) {  
+                return new int[]{-1,-1};  
+            }  
+            if(last == nums.length - 1 && nums[last] == target) last++;
+            return new int[]{first, Math.max(first, last - 1)};  
+        }  
+          
+        public int binarySearch(int[] nums, int key) {  
+            int l = 0, h = nums.length - 1;  
+            while (l < h) {  
+                int m = l + (h - l) / 2;  
+                if (nums[m] >= key) {  
+                    h = m;      //如果nums[m] == key，  
+                } else {  
+                    l = m + 1;  
+                }  
+            }  
+            return l;  
+        }  
+    }  
 ```    
     
 ### 个人解读    
