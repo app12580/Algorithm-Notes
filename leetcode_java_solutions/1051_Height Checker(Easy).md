@@ -36,6 +36,24 @@ Memory Usage: 34.6 MB, less than 100.00% of Java online submissions for Height C
           return res;    
       }    
   }    
+  
+  // 方法二：  计数法
+  class Solution {
+      public int heightChecker(int[] heights) {
+          int[] arr = new int[101];
+          for (int height : heights) {
+              arr[height]++;
+          }
+          int count = 0;
+          for (int i = 1, j = 0; i < arr.length; i++) {
+              while (arr[i]-- > 0) {
+                  if (heights[j++] != i) count++;
+              }
+          }
+          return count;
+      }
+  }
+  
 ```      
       
 ### 个人解读      
@@ -48,3 +66,4 @@ Memory Usage: 34.6 MB, less than 100.00% of Java online submissions for Height C
 tags:      
   -  题目描述    
   -  预处理    
+  -  优化    
