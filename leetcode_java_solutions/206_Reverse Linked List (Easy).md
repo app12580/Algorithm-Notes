@@ -17,7 +17,7 @@ while外有声明一个return一个，while里 声(明)1移(动)1(继)续2
 public ListNode reverseList(ListNode head) {  
         ListNode pre = null;  
         while(head != null) {       //坚持链表的while条件绝不动摇  
-            ListNode next = head.next;  
+            ListNode next = head.next;  // next可能为null，所以不要有任何操作  
             head.next = pre;  
             pre = head;     //然后要想到head需要存起来  
             head = next;    //head = next 是必须的  
