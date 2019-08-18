@@ -18,6 +18,12 @@
   The input is always valid. You may assume that evaluating the queries will result in no division by zero and there is no contradiction.
 ### solution  
 ```  
+
+//方法一： Dfs
+Runtime: 1 ms, faster than 89.42% of Java online submissions for Evaluate Division.
+Memory Usage: 34.9 MB, less than 88.24% of Java online submissions for Evaluate Division.
+
+
   class Solution {
      public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
           HashMap<String, ArrayList<String>> pairs = new HashMap<String, ArrayList<String>>();
