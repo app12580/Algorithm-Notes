@@ -40,7 +40,7 @@
   NOTE: input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.  
     
   对于区间数组arr，返回一个数组，数组元素为每一个区间的特征值：  
-  特征值：如果在数组中存在当前区间元素的右区间，那么特征值为这些右区间中最小的数组索引；如果不存在，则返回-1。  
+  特征值：如果在数组中存在当前区间元素的右区间，那么特征值为这些右区间中(右值)最小的数组索引；如果不存在，则返回-1。  
     
 ### solution    
 ```    
