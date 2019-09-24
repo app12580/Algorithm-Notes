@@ -34,7 +34,8 @@
       for (int i : nums) {    
           if (freq.get(i) == 0) continue;    
           else if (appendfreq.getOrDefault(i,0) > 0) {    
-              appendfreq.put(i, appendfreq.get(i) - 1);     //这个map表示前面开头的，key表示，可以把key值放进前面的链里面    
+              appendfreq.put(i, appendfreq.get(i) - 1);     
+              //这个map表示前面开头的，key表示，可以把key值放进前面的链里面    
               appendfreq.put(i+1, appendfreq.getOrDefault(i+1,0) + 1);    
           }       
           else if (freq.getOrDefault(i+1,0) > 0 && freq.getOrDefault(i+2,0) > 0) {    
