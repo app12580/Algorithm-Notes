@@ -33,6 +33,16 @@ class Solution {
   
     }  
 }  
+
+//方法二： 看了918以后的优化
+    public int maxSubArray(int[] nums) {
+        int total = 0, maxSum = Integer.MIN_VALUE, curMax = 0;
+        for (int a : nums) {
+            curMax = Math.max(curMax + a, a);
+            maxSum = Math.max(maxSum, curMax);
+        }
+        return maxSum;
+    }
 ```  
   
 ### 个人解读  

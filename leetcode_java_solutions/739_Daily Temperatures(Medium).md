@@ -23,9 +23,9 @@ Note: The length of temperatures will be in the range [1, 30000]. Each temperatu
 ```    
     
 ### 个人解读    
-  循环入栈问题，先要确定入栈和出栈条件。出栈条件：当cur大于栈顶值。  
+  单调栈问题，先要确定入栈和出栈条件。出栈条件：当cur大于栈顶值。  
   注意栈里面存放的是索引值。  
     
 tags:    
   -  栈  
-  -  循环入栈  
+  -  单调栈  
