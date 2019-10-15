@@ -133,9 +133,11 @@ Memory Usage: 36.9 MB, less than 100.00% of Java online submissions for Wildcard
   方法二的贪婪算法： 遇到*尽可能的少匹配。  
   整个贪婪算法也是，要让pattern尽可能的少匹配。这样子不会错过答案，如果s多了就去回溯。  
     
+  看了[065](065_Valid%20Number(Hard).md)这个莫名其妙的题目回来后，发现这种解法好像叫做AC自动机   
     
 tags:    
   -  多维DP  
   -  字符串  
   -  贪婪算法  
   -  重点数学  
+  -  AC自动机？？   
