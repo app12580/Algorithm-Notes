@@ -15,6 +15,9 @@
   分割字符串使得每个部分都是回文数  
 ### solution    
 ```    
+Runtime: 2 ms, faster than 96.63% of Java online submissions for Palindrome Partitioning.
+Memory Usage: 38.8 MB, less than 97.73% of Java online submissions for Palindrome Partitioning.
+
   class Solution {  
        public List<List<String>> partition(String s) {  
           List<List<String>> res = new ArrayList<>();  
