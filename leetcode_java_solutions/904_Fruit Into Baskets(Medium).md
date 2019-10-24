@@ -86,4 +86,4 @@ Memory Usage: 50.3 MB, less than 43.40% of Java online submissions for Fruit Int
   curLen问题，找到只含有两个数字的最长连续子区间。
   
 tags:  
-  -  
+  -  区间  

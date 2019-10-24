@@ -40,4 +40,10 @@ private boolean dfs(xxx) {
    
   ```   
   属于一套标准的模板了   
+
+### 关于DFS的返回值
+1、void 很常见
+2、int或者boolean用来控制进度
+3、Object类，用来构建数据结构(315)
+
   

@@ -25,4 +25,11 @@
   
   
 ```  
+
+
+### PriorityQueue  
+```  
+private PriorityQueue<Integer> small = new PriorityQueue<>(Collections.reverseOrder());  
+  
+```    
   
