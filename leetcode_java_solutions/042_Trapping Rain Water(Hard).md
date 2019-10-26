@@ -10,6 +10,39 @@
   Output: 6  
 ### solution    
 ```    
+// 方法二： 从两边向中间收缩
+Runtime: 1 ms, faster than 98.52% of Java online submissions for Trapping Rain Water.
+Memory Usage: 35.9 MB, less than 100.00% of Java online submissions for Trapping Rain Water.
+
+class Solution {
+   public int trap(int[] height) {
+        int left = 0, right = height.length-1;
+        int leftMax = 0, rightMax = 0, res = 0;
+        while (left < right) {
+            if (height[left] <= height[right]) {
+                if (height[left] > leftMax) {
+                    leftMax = height[left];
+                }
+                else {
+                    res += leftMax - height[left];
+                }
+                left++;
+            }
+            else {
+                if (height[right] > rightMax) {
+                    rightMax = height[right];
+                }
+                else {
+                    res += rightMax - height[right];
+                }
+                right--;
+            }
+        }
+        return res;
+    }
+
+}
+
 //方法一： 单调栈  
 一周目时候能做出来就不错了。。。  
 Runtime: 5 ms, faster than 17.61% of Java online submissions for Trapping Rain Water.  
