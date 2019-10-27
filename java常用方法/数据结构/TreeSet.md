@@ -33,3 +33,6 @@ private PriorityQueue<Integer> small = new PriorityQueue<>(Collections.reverseOr
   
 ```    
   
+### LinkedHashSet  
+可以与输入顺序一致的输出  
+  
