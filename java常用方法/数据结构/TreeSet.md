@@ -35,4 +35,8 @@ private PriorityQueue<Integer> small = new PriorityQueue<>(Collections.reverseOr
   
 ### LinkedHashSet  
 可以与输入顺序一致的输出  
-  
+
+
+### TreeMap  
+treeMap.subMap(star, end);   //返回子map  ，默认flag是true和false  
+treeMap.subMap(star, flag1, end, flag2);   //返回子map  ,flag是包不包括两边端点  
